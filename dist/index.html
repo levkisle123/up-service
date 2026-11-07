@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="UP Service — техническое обслуживание, диагностика и ремонт автомобилей. Моторное масло, масляный фильтр и работа — 4 000 ₽. Запись по телефону.">
+  <title>UP Service — внимание к каждой детали</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="preload" href="/assets/hero.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="header" id="header">
+    <a class="brand" href="/" aria-label="UP Service — на главную"><img src="/assets/logo-transparent.svg" width="1090" height="125" alt="UP Service"></a>
+    <span class="header-caption">АВТОСЕРВИС<br>С ВНИМАНИЕМ К ДЕТАЛЯМ</span>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="/#services">Услуги</a><a href="/to-4000" class="nav-offer">ТО за 4 000 ₽ <span></span></a><a href="/#approach">О сервисе</a><a href="/#contacts">Контакты</a>
+    </nav>
+    <button class="header-book" data-book="Обслуживание">Записаться <span aria-hidden="true">↗</span></button>
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация" hidden>
+    <a href="/#services">Услуги <span>↗</span></a><a href="/to-4000">ТО за 4 000 ₽ <span>↗</span></a><a href="/#approach">О сервисе <span>↗</span></a><a href="/#contacts">Контакты <span>↗</span></a><button class="button button-yellow" data-book="Обслуживание">Записаться на обслуживание <span>↗</span></button>
+  </nav>
+  <main id="main"></main>
+  <footer class="footer wrap">
+    <a class="brand" href="/" aria-label="UP Service — на главную"><img src="/assets/logo-transparent.svg" width="1090" height="125" alt="UP Service"></a>
+    <span>Внимание к деталям. Уважение к вам.</span>
+    <button class="text-link privacy-trigger">Конфиденциальность</button>
+    <span class="copyright">© <span id="year"></span> UP Service</span>
+  </footer>
+  <div class="mobile-actions"><button class="mobile-call" data-contact><i class="hgi hgi-stroke hgi-call" aria-hidden="true"></i> Позвонить</button><button class="button button-yellow" data-book="Обслуживание">Записаться <span aria-hidden="true">↗</span></button></div>
+  <dialog id="booking-dialog" class="booking-dialog" aria-labelledby="booking-title">
+    <button class="dialog-close" data-close aria-label="Закрыть форму">×</button>
+    <div class="dialog-top"><span class="eyebrow"><span class="status-dot"></span> UP SERVICE / ЗАПИСЬ</span><h2 id="booking-title">Ваш автомобиль.<br><span class="muted">Наша забота.</span></h2><p>Оставьте номер — уточним задачу<br>и подберём удобное время.</p></div>
+    <form id="booking-form" novalidate>
+      <div class="selected-service"><span>Услуга</span><strong id="selected-service">Обслуживание</strong><input type="hidden" name="service" id="service-input" value="Обслуживание"></div>
+      <div class="field"><label for="phone">Номер телефона <span>*</span></label><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (999) 123-45-67" required aria-describedby="phone-error" maxlength="30"><span class="field-error" id="phone-error"></span></div>
+      <div class="field"><label for="name">Как к вам обращаться <span class="optional">необязательно</span></label><input type="text" id="name" name="name" autocomplete="given-name" placeholder="Ваше имя" maxlength="80"></div>
+      <div class="consent-wrap"><label class="consent"><input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error"><span>Согласен на обработку персональных данных.</span></label><button class="text-link privacy-trigger" type="button">Условия обработки данных</button><span class="field-error" id="consent-error"></span></div>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      <button class="button button-yellow submit-button" type="submit"><span class="submit-label">Жду звонка</span><span class="submit-arrow" aria-hidden="true">↗</span><span class="spinner" hidden></span></button>
+      <p class="demo-note">Демонстрационная версия. Заявки пока не отправляются.</p>
+    </form>
+    <div class="success-message" hidden><span class="success-mark" aria-hidden="true">✓</span><h3>Заявка принята</h3><p>Свяжемся с вами, уточним задачу и подберём время.</p><button class="button button-yellow" data-close>Отлично <span aria-hidden="true">↗</span></button></div>
+  </dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="dialog-close" data-close aria-label="Закрыть">×</button><span class="eyebrow">UP SERVICE / ИНФОРМАЦИЯ</span><h2 id="info-title"></h2><div id="info-body"></div><button class="button button-outline" data-close>Понятно <span aria-hidden="true">↗</span></button></dialog>
+</body>
+</html>
